@@ -15,7 +15,7 @@ const GoogleAuthHandler = () => {
       let response = await googleAuthController(authenticationCode);
       console.log(response);
       dispatch(loggedInUser(response));
-      //navigate("/dashboard");
+      navigate("/dashboard");
     }
   };
 
