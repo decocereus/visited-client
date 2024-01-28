@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loggedInUser } from "../features/authSlice";
 import { googleAuthController } from "../utils/apiCalls";
+import Spinner from "./Spinner";
 
 const GoogleAuthHandler = () => {
   const navigate = useNavigate();
@@ -24,7 +25,14 @@ const GoogleAuthHandler = () => {
     handleGoogleAuthFlow();
   }, [authenticationCode]);
 
-  return <div>Authenticating</div>;
+  return (
+    <div className="h-full w-full flex items-center justify-center">
+      <Spinner />
+      <p className="font-bold md:text-4xl text-2xl gap-2 ml-4">
+        Authenticating
+      </p>
+    </div>
+  );
 };
 
 export default GoogleAuthHandler;

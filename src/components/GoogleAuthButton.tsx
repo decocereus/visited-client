@@ -14,7 +14,7 @@ const GoogleAuthButton = ({ statusText, proxyUrl }: GoogleAuthButtonProps) => {
   return (
     <button
       onClick={handleOnClick}
-      className="bg-blue-500 rounded-md h-[3em] font-semibold w-[95%] flex items-center"
+      className="bg-blue-500 rounded-md h-[3em] font-semibold w-[95%] md:w-1/4 flex items-center"
     >
       <a
         href={proxyUrl}

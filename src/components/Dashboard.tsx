@@ -7,6 +7,7 @@ import UserCard from "./UserCard";
 import SearchBar from "./SearchBar";
 import Modal from "./ErrorModal";
 import { RootState } from "../store/store";
+import Spinner from "./Spinner";
 
 type AuthUser = User | null;
 
@@ -74,9 +75,14 @@ const Dashboard = () => {
           <SearchBar visitedUrls={visitedUrls} />
         </div>
       ) : (
-        <div>
-          <h2>Fetching authentication status</h2>
-        </div>
+        <>
+          {!displayErrorModal && (
+            <div className="w-full flex items-center justify-center gap-2 font-bold text-2xl md:text-3xl h-full">
+              <h2>Fetching authentication status</h2>
+              <Spinner />
+            </div>
+          )}
+        </>
       )}
     </div>
   );

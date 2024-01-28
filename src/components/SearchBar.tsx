@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import { SearchBarProps, VisitedUrl } from "../lib/definitions";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineWebhook } from "react-icons/md";
+import Spinner from "./Spinner";
 
 const SearchBar: React.FC<SearchBarProps> = ({
   visitedUrls,
@@ -55,7 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, []);
 
   if (!visitedUrls) {
-    return <div>Loading</div>;
+    return <Spinner />;
   }
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
