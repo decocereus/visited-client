@@ -3,7 +3,7 @@ import axios from "axios";
 export const getCurrentUser = async () => {
   try {
     let response = await axios.get(
-      "https://visited-client.vercel.app//auth/getCurrentUser"
+      "https://visited-client.vercel.app/auth/getCurrentUser"
     );
     return response.data;
   } catch (err) {
