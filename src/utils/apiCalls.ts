@@ -3,7 +3,7 @@ import axios from "axios";
 export const getCurrentUser = async () => {
   try {
     let response = await axios.get(
-      "https://visited-server-backend.onrender.com/api/v1/auth/getCurrentUser" //"https://visited-client.vercel.app/auth/getCurrentUser"
+      "http://localhost:4500/api/v1/auth/getCurrentUser" //"https://visited-server-backend.onrender.com/api/v1/auth/getCurrentUser"
     );
     return response.data;
   } catch (err) {
@@ -15,7 +15,7 @@ export const getCurrentUser = async () => {
 export const getVisitedUrls = async () => {
   try {
     let response = await axios.get(
-      `https://visited-server-backend.onrender.com/api/v1/database/getVisitedURLs`
+      "http://localhost:4500/api/v1/database/getVisitedURLs" //`https://visited-server-backend.onrender.com/api/v1/database/getVisitedURLs`
     );
     if (response.data.success) {
       return response.data.data;
