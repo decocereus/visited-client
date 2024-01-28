@@ -27,12 +27,10 @@ const Dashboard = () => {
 
   const fetchVisitedUrls = async () => {
     if (authenticatedUser) {
-      let googleId = authenticatedUser?.googleId;
-      console.log(googleId, authenticatedUser);
-      if (googleId) {
-        let response = await getVisitedUrls(googleId);
-        setVisitedUrls(response);
-      }
+      console.log(authenticatedUser.googleid);
+      console.log("getting data");
+      let response = await getVisitedUrls(authenticatedUser.googleid || "");
+      setVisitedUrls(response);
     }
   };
 

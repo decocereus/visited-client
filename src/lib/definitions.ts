@@ -8,6 +8,7 @@ export interface User {
   accessToken: string;
   refreshToken: string;
   googleId: string;
+  googleid: string;
   id: number;
 }
 
