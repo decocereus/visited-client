@@ -3,13 +3,11 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaRegFilePdf } from "react-icons/fa6";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
-interface HeaderProps {
-  handleThemeChange: () => void;
-}
+import { HeaderProps } from "../lib/definitions";
 
 const Header = ({ handleThemeChange }: HeaderProps) => {
   return (
-    <div className="flex items-center justify-between w-full fixed top-0 shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] h-[4em] px-5">
+    <div className="flex items-center justify-between w-full shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] px-5 py-[1em] bg">
       <div className="flex justify-between w-[5em]">
         <label className="flex items-center gap-2 cursor-pointer">
           <MdDarkMode size={25} onClick={handleThemeChange} />

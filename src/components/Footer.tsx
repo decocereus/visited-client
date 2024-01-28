@@ -1,9 +1,7 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <div className="fixed bottom-0 w-full flex justify-center items-center mb-2 border-t-1 py-2">
-      <p className="font-bold text-md text-gray-10">
+    <div className="fixed bottom-0 w-full flex justify-center items-center py-5 dark:bg-black bg-white">
+      <p className="font-bold text-md">
         Built by{" "}
         <a
           href="https://www.linkedin.com/in/amartyasingh07/"

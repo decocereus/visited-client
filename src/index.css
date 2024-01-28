@@ -2,14 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body,
 #root {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 1px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
 }
 
 .dark {
-  @apply bg-gray-800 text-zinc-50;
+  @apply bg-black text-zinc-50;
 }
 
 code {

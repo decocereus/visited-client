@@ -7,6 +7,7 @@ module.exports = function (app) {
         "/auth/google",
         "/auth/getCurrentUser",
         "/auth/logout",
+        "/database/getVisitedURLs",
       ],
       {
         target: "http://localhost:4500/api/v1",

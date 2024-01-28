@@ -14,8 +14,8 @@ const App = () => {
     <div
       className={
         isDark
-          ? `dark w-screen h-screen flex items-center justify-center flex-col gap-2`
-          : `w-screen h-screen flex items-center justify-center flex-col gap-2`
+          ? `dark h-full w-full flex flex-col items-start justify-start`
+          : `h-full w-full flex flex-col items-start justify-start`
       }
     >
       <Header handleThemeChange={handleThemeChange} />
