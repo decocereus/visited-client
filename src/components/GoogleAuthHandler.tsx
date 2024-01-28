@@ -13,8 +13,9 @@ const GoogleAuthHandler = () => {
   const handleGoogleAuthFlow = async () => {
     if (authenticationCode) {
       let response = await googleAuthController(authenticationCode);
-      dispatch(loggedInUser(JSON.stringify(response)));
-      navigate("/dashboard");
+      console.log(response);
+      dispatch(loggedInUser(response));
+      //navigate("/dashboard");
     }
   };
 
@@ -22,7 +23,7 @@ const GoogleAuthHandler = () => {
     handleGoogleAuthFlow();
   }, [authenticationCode]);
 
-  return null;
+  return <div>Authenticating</div>;
 };
 
 export default GoogleAuthHandler;
