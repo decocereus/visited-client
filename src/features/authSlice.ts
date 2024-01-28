@@ -1,23 +1,12 @@
-// authSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-
-// // Async action to handle logout
-// export const logoutAsync = () => async (dispatch) => {
-//   // You can include any asynchronous logic here, like making an API call
-
-//   // Simulating an asynchronous operation (e.g., logging out from a server)
-//   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-//   // Dispatch the actual logout action
-//   dispatch(logoutUser());
-// };
+import { AuthState } from "../lib/definitions";
 
 const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: null,
     // Add other authentication-related state if needed
-  },
+  } as AuthState,
   reducers: {
     logoutUser: (state) => {
       state.user = null;

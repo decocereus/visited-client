@@ -42,3 +42,12 @@ export interface ModalProps {
   onClose: () => void;
   children: ReactNode;
 }
+
+export interface AuthState {
+  user: {
+    name: string;
+    email: string;
+    avatarurl: string;
+    isverified: boolean;
+  } | null;
+}

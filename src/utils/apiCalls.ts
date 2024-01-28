@@ -12,11 +12,12 @@ export const getCurrentUser = async () => {
   }
 };
 
-export const getVisitedUrls = async () => {
+export const getVisitedUrls = async (googleId: string) => {
   try {
     let response = await axios.get(
-      "http://localhost:4500/api/v1/database/getVisitedURLs" //`https://visited-server-backend.onrender.com/api/v1/database/getVisitedURLs`
+      `http://localhost:4500/api/v1/database/getVisitedURLs?googleId=${googleId}`
     );
+    //`https://visited-server-backend.onrender.com/api/v1/database/getVisitedURLs`
     if (response.data.success) {
       return response.data.data;
     } else {

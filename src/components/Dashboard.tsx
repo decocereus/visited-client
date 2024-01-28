@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getCurrentUser, getVisitedUrls } from "../utils/apiCalls";
-import { loggedInUser } from "../features/authSlice";
+import { useSelector } from "react-redux";
+import { getVisitedUrls } from "../utils/apiCalls";
 import { User, VisitedUrl } from "../lib/definitions";
-import GoogleAuthButton from "./GoogleAuthButton";
 import UserCard from "./UserCard";
 import SearchBar from "./SearchBar";
 import Modal from "./ErrorModal";
+import { RootState } from "../store/store";
+
+type AuthUser = User | null;
 
 const Dashboard = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const [authenticatedUser, setAuthenticatedUser] =
-    useState<Partial<User> | null>(null);
+  const authenticatedUser: Partial<AuthUser> = useSelector(
+    (state: RootState) => state?.authSliceReducer?.user
+  );
+  console.log(authenticatedUser);
   const [visitedUrls, setVisitedUrls] = useState<undefined | VisitedUrl[]>(
     undefined
   );
@@ -25,17 +26,19 @@ const Dashboard = () => {
   };
 
   const fetchVisitedUrls = async () => {
-    let response = await getVisitedUrls();
-    setVisitedUrls(response);
+    if (authenticatedUser) {
+      let googleId = authenticatedUser?.googleId;
+      console.log(googleId, authenticatedUser);
+      if (googleId) {
+        let response = await getVisitedUrls(googleId);
+        setVisitedUrls(response);
+      }
+    }
   };
 
   const fetchCurrentUser = async () => {
     console.log("running");
-    let response = await getCurrentUser();
-    if (response) {
-      console.log(response);
-      setAuthenticatedUser(response);
-      dispatch(loggedInUser(response));
+    if (authenticatedUser) {
       fetchVisitedUrls();
     } else {
       setDisplayErrorModal(true);

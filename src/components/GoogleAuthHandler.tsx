@@ -16,7 +16,6 @@ const GoogleAuthHandler = () => {
       console.log(response);
       dispatch(loggedInUser(response));
       const googleId = response.googleId;
-
       navigate("/dashboard");
     }
   };
