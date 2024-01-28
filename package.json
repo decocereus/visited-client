@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.259",
     "@types/webextension-polyfill": "^0.10.7",
     "tailwindcss": "^3.4.1"
   }
