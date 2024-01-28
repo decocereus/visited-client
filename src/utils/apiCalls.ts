@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const getCurrentUser = async () => {
   try {
-    let response = await axios.get("http://localhost:3000/auth/getCurrentUser");
+    let response = await axios.get(
+      "https://visited-client.vercel.app//auth/getCurrentUser"
+    );
     return response.data;
   } catch (err) {
     console.error(err);
@@ -13,7 +15,7 @@ export const getCurrentUser = async () => {
 export const getVisitedUrls = async () => {
   try {
     let response = await axios.get(
-      `http://localhost:3000/database/getVisitedURLs`
+      `https://visited-client.vercel.app/database/getVisitedURLs`
     );
     if (response.data.success) {
       return response.data.data;

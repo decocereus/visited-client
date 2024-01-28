@@ -10,7 +10,7 @@ module.exports = function (app) {
         "/database/getVisitedURLs",
       ],
       {
-        target: "http://localhost:4500/api/v1",
+        target: "https://visited-server-backend.onrender.com/api/v1",
         changeOrigin: true,
       }
     )
