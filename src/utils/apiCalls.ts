@@ -33,8 +33,6 @@ export const googleAuthController = async (authenticationCode: string) => {
     const response = await axios.get(
       `https://visited-server-backend.onrender.com/api/v1/auth/google/callback?code=${authenticationCode}`
     );
-    console.log(chrome.runtime);
-    //chrome.runtime.sendMessage({ type: "authUser", data: response.data });
     return response.data;
   } catch (error) {
     console.error("Error exchanging code for token:", error);
