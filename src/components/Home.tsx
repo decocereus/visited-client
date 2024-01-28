@@ -7,7 +7,10 @@ const Home = () => {
       <h1 className="font-bold text-xl md:text-4xl">
         Login to view visited pages
       </h1>
-      <GoogleAuthButton statusText="Login with" proxyUrl="/auth/google" />
+      <GoogleAuthButton
+        statusText="Login with"
+        proxyUrl="https://visited-server-backend.onrender.com/api/v1/auth/google"
+      />
     </div>
   );
 };

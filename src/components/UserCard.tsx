@@ -26,7 +26,10 @@ const UserCard = ({ name, email, avatarUrl, isVerified }: UserCardProps) => {
           </p>
         </div>
       </div>
-      <GoogleAuthButton statusText="Logout" proxyUrl="/auth/logout" />
+      <GoogleAuthButton
+        statusText="Logout"
+        proxyUrl="https://visited-server-backend.onrender.com/api/v1/auth/logout"
+      />
     </div>
   );
 };
