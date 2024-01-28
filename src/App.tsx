@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import GoogleAuthHandler from "./components/GoogleAuthHandler";
 
 const App = () => {
   const [isDark, setIsDark] = useState(true);
@@ -23,6 +24,10 @@ const App = () => {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/dashboard" Component={Dashboard} />
+          <Route
+            path="/api/v1/auth/google/callback"
+            Component={GoogleAuthHandler}
+          />
         </Routes>
       </Router>
       <Footer />

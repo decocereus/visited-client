@@ -3,7 +3,7 @@ import axios from "axios";
 export const getCurrentUser = async () => {
   try {
     let response = await axios.get(
-      "https://visited-client.vercel.app/auth/getCurrentUser"
+      "https://visited-server-backend.onrender.com/api/v1/auth/getCurrentUser" //"https://visited-client.vercel.app/auth/getCurrentUser"
     );
     return response.data;
   } catch (err) {
@@ -15,7 +15,7 @@ export const getCurrentUser = async () => {
 export const getVisitedUrls = async () => {
   try {
     let response = await axios.get(
-      `https://visited-client.vercel.app/database/getVisitedURLs`
+      `https://visited-server-backend.onrender.com/api/v1/database/getVisitedURLs`
     );
     if (response.data.success) {
       return response.data.data;
@@ -24,5 +24,19 @@ export const getVisitedUrls = async () => {
     }
   } catch (err) {
     console.error(err);
+  }
+};
+
+export const googleAuthController = async (authenticationCode: string) => {
+  try {
+    const response = await axios.get(
+      `https://visited-server-backend.onrender.com/api/v1/auth/google/callback?code=${authenticationCode}`
+    );
+    // const { accessToken, user } = response.data;
+    return response;
+  } catch (error) {
+    console.error("Error exchanging code for token:", error);
+    // Handle error
+    return null;
   }
 };
