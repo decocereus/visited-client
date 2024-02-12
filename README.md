@@ -4,6 +4,10 @@ This is a simple React frontend built with TypeScript and TailwindCSS.
 
 # View the deployed version at https://visited-client.vercel.app/
 
+# Login details
+Login: t50284822@gmail.com
+password: test123@
+
 ## Clone the Repository
 
 To get started, clone the repository using the following command:
